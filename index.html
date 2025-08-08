@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PTDSE Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo" data-target="home">
+            <img src="images/icons/home.svg" alt="logo">
+        </a>
+
+        <!-- Hamburger for mobile -->
+        <button id="hamburger-btn" class="hamburger" aria-label="Toggle Menu">
+            <img src="images/icons/hamburger-menu.svg" alt="Menu">
+        </button>
+
+        <!-- User Profile & Theme Toggle -->
+        <div class="user-profile">
+            <!-- Theme Toggle Button -->
+            <img id="theme-toggle" src="images/icons/darkmode.svg" alt="Toggle Theme" title="Switch Theme" />
+
+            <!-- User Info -->
+            <span id="user-name">User Name</span>
+            <img src="images/icons/random.png" alt="Profile Picture" id="profile-picture" />
+
+            <!-- Dropdown -->
+            <div class="dropdown-menu">
+                <a href="#profile">Profile</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-target="home">Dashboard</a></li>
+                    <li><a href="#" data-target="product">Products</a></li>
+                    <li><a href="#" data-target="todo">ToDo List</a></li>
+                    <li><a href="#" data-target="profile">Profile</a></li>
+                    <li><a href="#" data-target="settings">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Dashboard Section -->
+            <section id="home" class="content-section active">
+                <h1>Dashboard</h1>
+                <div id="table-container">
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be dynamically added via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Products Section -->
+            <section id="product" class="content-section">
+                <h1>Products</h1>
+                <!-- Product cards will be injected here -->
+            </section>
+
+            <!-- Todo Section -->
+            <section id="todo" class="content-section">
+                <h1>ToDo List</h1>
+                <div class="todo-form">
+                    <input type="text" id="new-todo" placeholder="New task" />
+                    <input type="date" id="due-date" />
+                    <button id="add-todo">Add</button>
+                </div>
+                <ul id="todo-items"></ul>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="content-section">
+                <h1>Your Profile</h1>
+                <div class="profile-horizontal">
+                    <img id="profile-avatar" src="images/icons/random.png" alt="Profile Picture" />
+                    <div class="profile-text">
+                        <h2 id="profile-name">Name Placeholder</h2>
+                        <p id="profile-email">Email Placeholder</p>
+                        <p id="profile-catchphrase" class="catchphrase">Catchphrase Placeholder</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section">
+                <h1>Settings</h1>
+
+                <form id="settings-form" novalidate>
+                    <div class="form-group">
+                        <label for="displayName">Display Name <span>*</span></label>
+                        <input type="text" id="displayName" name="displayName" placeholder="Enter display name"
+                            required />
+                        <small class="error-message" id="name-error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="catchphrase">Catchphrase</label>
+                        <textarea id="catchphrase" name="catchphrase" rows="3"
+                            placeholder="Update your catchphrase"></textarea>
+                    </div>
+
+                    <button type="submit">Update</button>
+                    <p id="form-success" class="success-message"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 PTDSE Dashboard</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
